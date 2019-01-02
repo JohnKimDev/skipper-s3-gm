@@ -280,6 +280,8 @@ module.exports = function SkipperS3 (globalOpts) {
             return;
           }
 
+          console.log('%%%%%%%%%', body);
+
           // Package extra metadata about the S3 response on each file stream
           // in case we decide we want to use it for something later
           __newFile.extra = body;

@@ -49,10 +49,10 @@ Also make sure you have skipper itself [installed as your body parser](http://be
       headers: {                    // [OPTIONAL]: S3 Additional Headers information
         'customkey': 'data'         
       },
-      gm: {                         // [OPTIONAL]: You can skip all graphicsmagick options
-        filename: function(file) {  // [OPTIONAL]: input can be wither FUNCTION or STRING
+      filename: function(file) {  // [OPTIONAL]: input can be wither FUNCTION or STRING
            return file.filename + '_awesome';
         },
+      gm: {                         // [OPTIONAL]: You can skip all graphicsmagick options
         format: 'jpg',              // [OPTIONAL]: if you need to change the image format 
         noProfile: true,            // [OPTIONAL]: remove EXIF profile data (Default = false)
         crop: {                     // [OPTIONAL] Crop
@@ -67,11 +67,25 @@ Also make sure you have skipper itself [installed as your body parser](http://be
           options: '!'              // DOC: http://aheckmann.github.io/gm/docs.html#resize
         }
       }
-    }, function(err, uploadedFiles) {
-      if(err) return res.serverError(err);
-        res.ok();
-      });
-    }
+    }, function(err, body) {
+
+      // If successful, will return body, containing Location, Bucket, Key, ETag and size of the object.
+      // Otherwise it will return an error.
+      /*
+        {
+            Location: 'http://Example-Bucket.s3.amazonaws.com/destination.txt',
+            Bucket: 'Example-Bucket',
+            Key: 'destination.txt',
+            ETag: '"3858f62230ac3c915f300c664312c11f-9"',
+            size: 7242880
+        }
+      */
+      if(err) {
+        return res.serverError(err);
+      }
+      res.ok();
+    });
+  }
 ```
 
 ## Options

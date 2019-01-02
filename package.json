@@ -1,6 +1,6 @@
 {
   "name": "skipper-s3-gm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Streaming file uploads to S3 and GraphicsMagick",
   "main": "index.js",
   "scripts": {
