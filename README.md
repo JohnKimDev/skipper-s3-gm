@@ -1,4 +1,4 @@
-# [<img title="skipper-better-s3 - Amazon S3 filesystem adapter for Skipper" src="http://i.imgur.com/P6gptnI.png" width="200px" alt="skipper emblem - face of a ship's captain"/>][project-root] Skipper-S3-GM
+# <img title="skipper-better-s3 - Amazon S3 filesystem adapter for Skipper" src="http://i.imgur.com/P6gptnI.png" width="200px" alt="skipper emblem - face of a ship's captain"/> Skipper-S3-GM
 
 # skipper-s3-gm
 
